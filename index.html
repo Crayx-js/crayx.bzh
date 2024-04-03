@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/ico" href="logo.ico"/>
+    <title>Introduction</title>
+</head>
+    <header>
+        <ul class="navbar">
+        <li><a href="index1.html">Passer l'Introduction <ion-icon name="play-forward-outline" style="font-size: 35px; vertical-align: middle;"></ion-icon></a></li>
+        </ul>
+    </header>
+
+<body class="body-intro">
+    <h1 class="h1-intro"></h1>
+    <script>
+        setTimeout(function(){
+            document.location="index1.html";
+        }, 15000);
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        const title = document.querySelector('h1');
+        const txt = "Ce projet a été réalisé par Crayx.js";
+        
+        title.style.marginLeft = "200px";
+        title.style.marginRight = "200px";
+
+        function typewriter(word, index){
+            if(index < word.length) {
+                setTimeout(() => {
+                    title.innerHTML += `<span>${word[index]}</span>`;
+                    typewriter(txt, index + 1);
+                }, 300);
+            }
+        }
+
+        setTimeout(() => {
+            typewriter(txt, 0);
+        }, 500);
+    </script>
+</body>
+</html>
